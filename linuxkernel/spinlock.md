@@ -34,14 +34,14 @@ typedef struct raw_spinlock {
 spinlock api头文件
 include/linux/spinlock.h
 使用基本步骤是：
-1.初始化自旋锁  
-    定义一个自旋锁 spinlock_t mylock = SPIN_LOCK_UNLOCKED  
-    或者调用spin_lock_init函数对锁进行初始化
-2.进入临界区之前调用api获取锁
-    spin_lock(spinlock_t *lock);
-  这个过程不可中断，一旦调用了spin_lock在获取锁之前将一直处于自旋状态
-3.释放自旋锁
-     spin_unlock(spinlock_t *lock);
+<br>1.初始化自旋锁</br>
+<br>    定义一个自旋锁 spinlock_t mylock = SPIN_LOCK_UNLOCKED</br>
+<br>    或者调用spin_lock_init函数对锁进行初始化</br>
+<br>2.进入临界区之前调用api获取锁</br>
+<br>    spin_lock(spinlock_t *lock);</br>
+<br>  这个过程不可中断，一旦调用了spin_lock在获取锁之前将一直处于自旋状态</br>
+<br>3.释放自旋锁</br>
+<br>    spin_unlock(spinlock_t *lock);</br>
 #### spin_lock_init函数
 spin_lock_init(spinlock_t *lock);
 ```c
@@ -160,10 +160,10 @@ SMP（Symmetric Multi-Processors）：系统有多个处理器单元。各个处
 
 要注意，这里提到的“处理器单元”是指“logic CPU”，而不是“physical CPU”。举个例子，如果一个“physical CPU”包含2个core，并且一个core包含2个hardware thread。则一个“处理器单元”就是一个hardware thread。
 ### 参考
-[1]Linux Device Drivers
-[2]https://zhuanlan.zhihu.com/p/96001570 Linux中的Barrier
-[3]https://mp.weixin.qq.com/s?__biz=MzAwMDUwNDgxOA==&mid=2652664399&idx=1&sn=2dc274f63f2136dec7166df24d94d300&scene=21#wechat_redirect
-[4]https://blog.csdn.net/joker0910/article/details/7782765 这篇博客写的很好
-[5]http://www.wowotech.net/kernel_synchronization/spinlock.html 这篇博客非常系统
-[6]https://www.jianshu.com/p/f0d6e7103d9b
+<br>[1]Linux Device Drivers</br>
+<br>[2]https://zhuanlan.zhihu.com/p/96001570 Linux中的Barrier</br>
+<br>[3]https://mp.weixin.qq.com/s?__biz=MzAwMDUwNDgxOA==&mid=2652664399&idx=1&sn=2dc274f63f2136dec7166df24d94d300&scene=21#wechat_redirect</br>
+<br>[4]https://blog.csdn.net/joker0910/article/details/7782765 这篇博客写的很好</br>
+<br>[5]http://www.wowotech.net/kernel_synchronization/spinlock.html 这篇博客非常系统</br>
+<br>[6]https://www.jianshu.com/p/f0d6e7103d9b</br>
 
